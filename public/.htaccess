@@ -2,4 +2,5 @@ Options -MultiViews
 RewriteEngine On
 RewriteBase /timeflow
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [QSA,L]
