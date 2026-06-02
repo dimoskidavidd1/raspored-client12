@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.daa6625d.css",
-    "main.js": "/static/js/main.f07dd480.js",
-    "index.html": "/index.html",
-    "main.daa6625d.css.map": "/static/css/main.daa6625d.css.map",
-    "main.f07dd480.js.map": "/static/js/main.f07dd480.js.map"
+    "main.css": "/raspored/build/static/css/main.daa6625d.css",
+    "main.js": "/raspored/build/static/js/main.f07dd480.js",
+    "index.html": "/raspored/build/index.html",
+    "main.daa6625d.css.map": "/raspored/build/static/css/main.daa6625d.css.map",
+    "main.f07dd480.js.map": "/raspored/build/static/js/main.f07dd480.js.map"
   },
   "entrypoints": [
     "static/css/main.daa6625d.css",
