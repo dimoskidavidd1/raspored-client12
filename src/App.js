@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/raspored">
         <div className="min-h-screen">
           <Navbar darkMode={darkMode} setDarkMode={setDarkMode} {...sharedProps} />
           <Routes>
