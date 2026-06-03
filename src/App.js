@@ -8,12 +8,12 @@ import Login from './pages/Login';
 import Admin from './pages/Admin';
 import SuperAdmin from './pages/SuperAdmin';
 import api from './api';
-import './i18n';
+import { staticClasses, staticSchedule } from './staticData';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('dark') === 'true');
-  const [classes, setClasses] = useState([]);
-  const [schedule, setSchedule] = useState([]);
+  const [classes, setClasses] = useState(staticClasses);
+  const [schedule, setSchedule] = useState(staticSchedule);
   const [selectedClass, setSelectedClass] = useState(() => {
     const v = localStorage.getItem('selectedClass');
     return v ? Number(v) : null;
