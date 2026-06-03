@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/public_html/timeflow
+    - export DEPLOYPATH=/public_html/timeflow/oumirceacevskopje
     - /bin/rm -rf $DEPLOYPATH/static $DEPLOYPATH/index.html $DEPLOYPATH/manifest.json $DEPLOYPATH/asset-manifest.json
     - /bin/cp -rf $CURRENT_SOURCE_DIR/build/. $DEPLOYPATH

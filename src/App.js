@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <AuthProvider>
-      <BrowserRouter basename="/timeflow">
+      <BrowserRouter basename="/timeflow/oumirceacevskopje">
         <div className="min-h-screen">
           <Navbar darkMode={darkMode} setDarkMode={setDarkMode} {...sharedProps} />
           <Routes>
