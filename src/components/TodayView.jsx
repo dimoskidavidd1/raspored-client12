@@ -17,7 +17,7 @@ export default function TodayView({ schedule, selectedClass, classes }) {
   const cls = classes.find(c => c.id === selectedClass);
 
   const entries = schedule
-    .filter(s => s.class_id === selectedClass && s.day_of_week === dow)
+    .filter(s => Number(s.class_id) === Number(selectedClass) && s.day_of_week === dow)
     .sort((a, b) => toMinutes(a.start_time) - toMinutes(b.start_time));
 
   const { current, next } = getCurrentAndNext(entries);

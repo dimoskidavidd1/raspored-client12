@@ -19,7 +19,7 @@ export default function WeeklyView({ schedule, selectedClass, classes }) {
   const byDay = {};
   DAYS.forEach(d => {
     byDay[d] = schedule
-      .filter(s => s.class_id === selectedClass && s.day_of_week === d)
+      .filter(s => Number(s.class_id) === Number(selectedClass) && s.day_of_week === d)
       .sort((a, b) => toMinutes(a.start_time) - toMinutes(b.start_time));
   });
 
