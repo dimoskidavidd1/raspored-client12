@@ -21,14 +21,16 @@ export default function SuperAdmin() {
   }, []);
 
   const loadAll = async () => {
-    const [a, l, v] = await Promise.all([
-      api.get('/superadmin/users'),
-      api.get('/superadmin/logs'),
-      api.get('/superadmin/views'),
-    ]);
-    setAdmins(Array.isArray(a.data) ? a.data : []);
-    setLogs(Array.isArray(l.data) ? l.data : []);
-    setViews(v.data || {});
+    try {
+      const [a, l, v] = await Promise.all([
+        api.get('/superadmin/users').catch(() => ({ data: [] })),
+        api.get('/superadmin/logs').catch(() => ({ data: [] })),
+        api.get('/superadmin/views').catch(() => ({ data: {} })),
+      ]);
+      setAdmins(Array.isArray(a.data) ? a.data : []);
+      setLogs(Array.isArray(l.data) ? l.data : []);
+      setViews(v.data && typeof v.data === 'object' ? v.data : {});
+    } catch { }
   };
 
   const flash = (m) => { setMsg(m); setTimeout(() => setMsg(''), 3000); };
