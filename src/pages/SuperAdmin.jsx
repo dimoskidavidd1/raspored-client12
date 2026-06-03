@@ -26,9 +26,9 @@ export default function SuperAdmin() {
       api.get('/superadmin/logs'),
       api.get('/superadmin/views'),
     ]);
-    setAdmins(a.data);
-    setLogs(l.data);
-    setViews(v.data);
+    setAdmins(Array.isArray(a.data) ? a.data : []);
+    setLogs(Array.isArray(l.data) ? l.data : []);
+    setViews(v.data || {});
   };
 
   const flash = (m) => { setMsg(m); setTimeout(() => setMsg(''), 3000); };
