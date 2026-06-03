@@ -42,7 +42,7 @@ export default function Admin({ classes, schedule, reload }) {
   const [filterClass, setFilterClass] = useState('');
   const [filterDay, setFilterDay] = useState('');
 
-  if (!user || user.role !== 'admin') {
+  if (!user || (user.role !== 'admin' && user.role !== 'superadmin')) {
     navigate('/login');
     return null;
   }

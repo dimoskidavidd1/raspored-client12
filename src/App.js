@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
+import SuperAdmin from './pages/SuperAdmin';
 import api from './api';
 import './i18n';
 
@@ -38,7 +39,10 @@ export default function App() {
     if (!selectedClass && cls.data.length > 0) setSelectedClass(cls.data[0].id);
   };
 
-  useEffect(() => { reload(); }, []);
+  useEffect(() => {
+    api.post('/superadmin/views').catch(() => {});
+    reload();
+  }, []);
 
   const sharedProps = { classes, schedule, selectedClass, setSelectedClass };
 
@@ -51,6 +55,7 @@ export default function App() {
             <Route path="/" element={<Home {...sharedProps} />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<Admin {...sharedProps} reload={reload} />} />
+            <Route path="/superadmin" element={<SuperAdmin />} />
           </Routes>
         </div>
       </BrowserRouter>

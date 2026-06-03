@@ -18,7 +18,13 @@ export default function Navbar({ darkMode, setDarkMode, classes, selectedClass, 
   return (
     <nav className="sticky top-0 z-50 bg-blue-600 dark:bg-blue-800 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3">
-        <Link to="/" className="font-bold text-lg tracking-tight mr-auto">📅 {t('appTitle')}</Link>
+        <Link to="/" className="flex items-center gap-2 mr-auto">
+          <img src="/timeflow-logo.png" alt="Timeflow Education" className="h-8 w-8 object-contain" />
+          <span className="font-bold text-lg tracking-tight leading-tight">
+            <span className="block text-xs font-normal opacity-80">Timeflow Education</span>
+            📅 {t('appTitle')}
+          </span>
+        </Link>
 
         {/* Class selector */}
         <select
@@ -49,6 +55,16 @@ export default function Navbar({ darkMode, setDarkMode, classes, selectedClass, 
               <Link to="/admin" className="text-sm bg-yellow-500 text-gray-900 px-3 py-1 rounded-lg hover:bg-yellow-400 font-medium">
                 {t('admin')}
               </Link>
+            )}
+            {user.role === 'superadmin' && (
+              <>
+                <Link to="/admin" className="text-sm bg-yellow-500 text-gray-900 px-3 py-1 rounded-lg hover:bg-yellow-400 font-medium">
+                  {t('admin')}
+                </Link>
+                <Link to="/superadmin" className="text-sm bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-400 font-medium">
+                  ⚡ Super Admin
+                </Link>
+              </>
             )}
             <button onClick={handleLogout} className="text-sm bg-blue-700 dark:bg-blue-900 px-3 py-1 rounded-lg hover:bg-blue-800">
               {t('logout')}
