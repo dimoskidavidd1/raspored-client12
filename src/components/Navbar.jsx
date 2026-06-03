@@ -19,7 +19,7 @@ export default function Navbar({ darkMode, setDarkMode, classes, selectedClass, 
     <nav className="sticky top-0 z-50 bg-blue-600 dark:bg-blue-800 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3">
         <Link to="/" className="flex items-center gap-2 mr-auto">
-          <img src="/timeflow-logo.png" alt="Timeflow Education" className="h-8 w-8 object-contain" />
+          <img src={`${process.env.PUBLIC_URL}/timeflow-logo.png`} alt="Timeflow Education" className="h-8 w-8 object-contain" />
           <span className="font-bold text-lg tracking-tight leading-tight">
             <span className="block text-xs font-normal opacity-80">Timeflow Education</span>
             📅 {t('appTitle')}
