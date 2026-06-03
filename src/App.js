@@ -29,14 +29,17 @@ export default function App() {
   }, [selectedClass]);
 
   const reload = async () => {
-    const [cls, sch] = await Promise.all([
-      api.get('/classes'),
-      api.get('/schedule/all')
-    ]);
-    setClasses(cls.data);
-    setSchedule(sch.data);
-    // Auto-select first class if none selected
-    if (!selectedClass && cls.data.length > 0) setSelectedClass(cls.data[0].id);
+    try {
+      const [cls, sch] = await Promise.all([
+        api.get('/classes'),
+        api.get('/schedule/all')
+      ]);
+      setClasses(cls.data);
+      setSchedule(sch.data);
+      if (!selectedClass && cls.data.length > 0) setSelectedClass(cls.data[0].id);
+    } catch (err) {
+      console.error('reload failed', err);
+    }
   };
 
   useEffect(() => {
