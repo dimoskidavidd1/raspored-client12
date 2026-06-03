@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - /bin/mkdir -p /home/klgbxdde/public_html/timeflow/oumirceacevskopje
-    - /bin/rm -rf /home/klgbxdde/public_html/timeflow/oumirceacevskopje/static /home/klgbxdde/public_html/timeflow/oumirceacevskopje/index.html /home/klgbxdde/public_html/timeflow/oumirceacevskopje/manifest.json /home/klgbxdde/public_html/timeflow/oumirceacevskopje/.htaccess /home/klgbxdde/public_html/timeflow/oumirceacevskopje/sw.js
-    - /bin/cp -rf $CURRENT_SOURCE_DIR/build/. /home/klgbxdde/public_html/timeflow/oumirceacevskopje
+    - /bin/mkdir -p /home/klgbxdde/public_html/timeflow/ooumirceacevskopje
+    - /bin/rm -rf /home/klgbxdde/public_html/timeflow/ooumirceacevskopje/static /home/klgbxdde/public_html/timeflow/ooumirceacevskopje/index.html /home/klgbxdde/public_html/timeflow/ooumirceacevskopje/manifest.json /home/klgbxdde/public_html/timeflow/ooumirceacevskopje/.htaccess /home/klgbxdde/public_html/timeflow/ooumirceacevskopje/sw.js
+    - /bin/cp -rf $CURRENT_SOURCE_DIR/build/. /home/klgbxdde/public_html/timeflow/ooumirceacevskopje
